@@ -18,7 +18,7 @@ export const getPokemons = createAsyncThunk(
         });
       };
       await timeout();
-      return response.data;
+      return response.datas;
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -31,8 +31,8 @@ export const getPokemonById = createAsyncThunk(
     try {
       let url = `/pokemons/${id}`;
       const response = await apiService.get(url);
-      if (!response.data) return rejectWithValue({ message: "No data" });
-      return response.data;
+      if (!response.datas) return rejectWithValue({ message: "No data" });
+      return response.datas;
     } catch (error) {
       return rejectWithValue(error);
     }

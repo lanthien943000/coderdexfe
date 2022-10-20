@@ -218,7 +218,7 @@ export default function PokeList() {
                 >
                   <Card
                     component={Link}
-                    to={`${pokemon.id}`}
+                    to={`/pokemons/${pokemon.id}`}
                     sx={{
                       width: "12rem",
                       height: "19rem",

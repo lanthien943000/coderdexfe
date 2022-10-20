@@ -31,7 +31,6 @@ export const DetailPage = () => {
   useEffect(() => {
     dispatch(getPokemonById(id));
   }, [id, dispatch]);
-
   const weaknesses = calculateWeaknesses(pokemon?.types);
   return (
     <Container maxWidth="lg" disableGutters sx={styles.container}>
@@ -47,7 +46,7 @@ export const DetailPage = () => {
               alignItems="center"
               sx={{ textDecoration: "none" }}
               component={Link}
-              to={`/${previousPokemon?.id || "1"}`}
+              to={`/pokemons/${previousPokemon?.id || "1"}`}
             >
               <ArrowBackIosNewIcon
                 sx={{
@@ -91,7 +90,7 @@ export const DetailPage = () => {
               justifyContent="flex-end"
               sx={{ textDecoration: "none" }}
               component={Link}
-              to={`/${nextPokemon?.id || "1"}`}
+              to={`/pokemons/${nextPokemon?.id || "1"}`}
             >
               <Typography
                 display={{ xs: "none", sm: "block" }}
@@ -120,7 +119,6 @@ export const DetailPage = () => {
             </Box>
           </Grid>
         </Grid>
-
         <Box
           position="absolute"
           bottom={0}
